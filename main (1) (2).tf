@@ -62,3 +62,11 @@ ipv6_cidr_blocks = ["::/0"]
 
     tags = { Name = "wp-sg" }
  }
+
+ terraform {
+  backend "s3" {
+    bucket         = "your-s3-bucket-name"          # Replace with your S3 bucket name
+    key            = "terraform/wp/terraform.tfstate"  # Path to the state file in the bucket
+    region         = "us-east-2"                    # Must match the region of your S3 bucket
+  }
+}
