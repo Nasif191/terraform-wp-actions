@@ -31,7 +31,7 @@ resource "aws_instance" "my_server" {
 }
 # Security Group that allows SSH and HTTP from anywhere
 resource "aws_security_group" "wp_sg" {
-    name        = "wp-sg"
+    name_prefix = "wp-sg-"          # ← replaces name = "wp-sg"
     description = "Allow SSH (22) and HTTP (80)"
     vpc_id      = data.aws_vpc.default.id
 
